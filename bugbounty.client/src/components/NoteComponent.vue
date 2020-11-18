@@ -39,7 +39,7 @@ export default {
       note: computed(() => props.noteProp),
       profile: computed(() => AppState.profile),
       async deleteNote() {
-        await notesService.deleteNote(route.params.blogId, props.noteProp.id)
+        await notesService.deleteNote(route.params.bugId, props.noteProp.id)
       }
     }
   },

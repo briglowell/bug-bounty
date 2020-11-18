@@ -145,7 +145,6 @@ export default {
       },
       async createNote() {
         await notesService.createNote(route.params.bugId, state.newNote)
-        notesService.getNotes(route.params.blogId)
       }
     }
   },

@@ -19,7 +19,7 @@
             <h5>Status</h5>
           </div>
           <div class="col-3">
-            <h5>Date</h5>
+            <h5>Last Upated</h5>
           </div>
         </div>
       </div>
@@ -80,7 +80,8 @@ export default {
     })
     return {
       state,
-      bugs: computed(() => AppState.bugs),
+      bugs: computed(() => AppState.bugs.sort((a, b) => (a.updatedAt > b.updatedAt) ? 1 : -1)),
+      // sortedBugs: computed(() => AppState.bugs.sort((a, b) => (a.updatedAt > b.updatedAt) ? 1 : -1)),
       async createBug() {
         await bugsService.createBug(state.newBug)
         await document.getElementById('report-form').reset()
